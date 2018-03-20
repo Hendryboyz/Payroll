@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0BDC585E-92E9-4C4A-BBE9-A1D19CB512B4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Payroll</RootNamespace>
+    <AssemblyName>Payroll</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\Affiliation.cs" />
+    <Compile Include="Domain\Employee.cs" />
+    <Compile Include="Domain\SalesReceipt.cs" />
+    <Compile Include="Domain\ServiceCharge.cs" />
+    <Compile Include="Domain\TimeCard.cs" />
+    <Compile Include="Domain\UnionAffiliation.cs" />
+    <Compile Include="PaymentClassification\CommisionedClassification.cs" />
+    <Compile Include="PaymentClassification\HourlyClassification.cs" />
+    <Compile Include="PaymentClassification\PaymentClassification.cs" />
+    <Compile Include="PaymentClassification\SalariedClassification.cs" />
+    <Compile Include="PaymentMethod\HoldMethod.cs" />
+    <Compile Include="PaymentMethod\PaymentMethod.cs" />
+    <Compile Include="PaymentSchedule\BiweeklySchedule.cs" />
+    <Compile Include="PaymentSchedule\MonthlySchedule.cs" />
+    <Compile Include="PaymentSchedule\PaymentSchedule.cs" />
+    <Compile Include="PaymentSchedule\WeeklySchedule.cs" />
+    <Compile Include="PayrollDatabase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transaction\AddEmployee\AddEmployeeTransaction.cs" />
+    <Compile Include="Transaction\AddEmployee\AddHourlyEmployee.cs" />
+    <Compile Include="Transaction\AddEmployee\AddSalariedEmployee.cs" />
+    <Compile Include="Transaction\AddEmployee\AddCommissionedEmployee.cs" />
+    <Compile Include="Transaction\ChangeEmployee\ChangeAddressTransaction.cs" />
+    <Compile Include="Transaction\ChangeEmployee\ChangeClassification\ChangeClassificationTransaction.cs" />
+    <Compile Include="Transaction\ChangeEmployee\ChangeClassification\ChangeCommissionedTransaction.cs" />
+    <Compile Include="Transaction\ChangeEmployee\ChangeClassification\ChangeSalariedTransaction.cs" />
+    <Compile Include="Transaction\ChangeEmployee\ChangeEmployeeTransaction.cs" />
+    <Compile Include="Transaction\ChangeEmployee\ChangeClassification\ChangeHourlyTransaction.cs" />
+    <Compile Include="Transaction\ChangeEmployee\ChangeNameTransaction.cs" />
+    <Compile Include="Transaction\DeleteEmployeeTransaction.cs" />
+    <Compile Include="Transaction\SalesReceiptTransaction.cs" />
+    <Compile Include="Transaction\ServiceChargeTransaction.cs" />
+    <Compile Include="Transaction\TimeCardTransaction.cs" />
+    <Compile Include="Transaction\Transaction.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
